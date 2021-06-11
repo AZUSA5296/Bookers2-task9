@@ -6,9 +6,11 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     @user = User.find(@book.user_id)
     @book_comment = BookComment.new
+    impressionist(@book, nil, unique: [:session_hash])
   end
 
   def index
+    impressionist(@book, nil, unique: [:session_hash])
     to = Time.current.at_end_of_day
     from = (to - 6.day).at_beginning_of_day   #一週間分のレコードを取得
     @books = Book.includes(:favorite_users).
