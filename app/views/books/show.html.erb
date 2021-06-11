@@ -24,6 +24,7 @@
           </td>
 
           <td class="comments-count">コメント数: <%= @book.book_comments.count %></td>
+          <td class="pv-count">閲覧数:<%= @book.impressions_count %></td>
 
            <td>
             <div id="rate_<%= @book.id %>"></div>
