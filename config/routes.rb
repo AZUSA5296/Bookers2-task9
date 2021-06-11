@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     registrations: 'devise/registrations'
   }
 
+  get "search2" => "homes#search2"
+
   get '/search' => 'search#search' #検索機能
 
   get 'relationships/following' #フォロー機能
